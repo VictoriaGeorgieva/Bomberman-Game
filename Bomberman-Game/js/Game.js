@@ -84,11 +84,6 @@ Game.prototype.Render = function(elapsed)
                 this.RemoveBlockedFire(self.player.fire, this, field, field.canBeDestroyed);
 
                 if(field.canBeDestroyed) {
-
-                    var player1_points = document.getElementById("player1");
-                    self.player.points += 1;
-                    player1_points.innerHTML = self.player.points;
-
                     checkIfToShow = false;
                     return;
                 }
@@ -102,11 +97,6 @@ Game.prototype.Render = function(elapsed)
                     this.RemoveBlockedFire(self.second_player.fire, this, field, field.canBeDestroyed);
 
                     if(field.canBeDestroyed) {
-
-                        var player2_points = document.getElementById("player2");
-                        self.second_player.points += 1;
-                        player2_points.innerHTML = self.second_player.points;
-
                         checkIfToShow = false;
                         return;
                     }
@@ -283,11 +273,6 @@ Game.prototype.Render = function(elapsed)
 
         $.each(self.enemies, function(){
             if(checkForCollisionFieldFire(this, fire)){
-                var player1_points = document.getElementById("player1");
-
-                self.player.points += 1;
-                player1_points.innerHTML = self.player.points;
-
                 self.enemies.splice(self.enemies.indexOf(this), 1);
             }
         });
@@ -331,11 +316,6 @@ Game.prototype.Render = function(elapsed)
 
             $.each(self.enemies, function(){
                 if(checkForCollisionFieldFire(this, fire)){
-
-                    var player2_points = document.getElementById("player2");
-                    self.second_player.points += 1;
-                    player2_points.innerHTML = self.second_player.points;
-
                     self.enemies.splice(self.enemies.indexOf(this), 1);
                 }
             });
